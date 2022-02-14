@@ -72,6 +72,7 @@ function __scheme_get_definition \
     echo 'tomorrow-night'
     echo 'tomorrow-night-bright'
     echo 'zenburn'
+    echo 'dr460nized'
     return
   end
 
@@ -427,6 +428,39 @@ function __scheme_get_definition \
       set -g scheme_pager_color_prefix $cyan
       set -g scheme_pager_color_completion $foreground
       set -g scheme_pager_color_description $comment
+
+    case 'dr460nized'
+      # Color Palette
+      set -l black      0a1124
+      set -l red        f35645
+      set -l green      EB3247
+      set -l yellow     BC4349
+      set -l blue       F35645
+      set -l magenta    F6A73B
+      set -l cyan       FAD32F
+      set -l white      eec49a
+      __scheme_reset_to_default
+      # Syntax Highlighting Colors
+      set -g scheme_color_normal $white
+      set -g scheme_color_command $red
+      # set -g scheme_color_keyword $pink
+      set -g scheme_color_quote $green
+      set -g scheme_color_redirection $magenta
+      set -g scheme_color_end $cyan
+      set -g scheme_color_error $white
+      set -g scheme_color_param $purple
+      set -g scheme_color_comment $yellow
+      # set -g scheme_color_selection --background=$selection
+      # set -g scheme_color_search_match --background=$selection
+      set -g scheme_color_operator $cyan
+      set -g scheme_color_escape $cyan
+      set -g fish_color_autosuggestion $red
+      # Completion Pager Colors
+      # set -g scheme_pager_color_progress $comment
+      # set -g scheme_pager_color_prefix $cyan
+      # set -g scheme_pager_color_completion $foreground
+      # set -g scheme_pager_color_description $comment
+      
 
     case '*'
       echo (set_color normal)(set_color $fish_color_error)(set_color -o)'Error:'(set_color normal)' '(set_color $fish_color_normal)'No such scheme available:'(set_color normal)' '(set_color $fish_color_error)$scheme_name(set_color normal)
